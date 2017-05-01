@@ -16,7 +16,7 @@ final class DBConnection
 
     public static function getInstance(){
         if (self::$connection === null){
-            self::$connection = new DBConnection();
+            self::$connection = new PDO('mysql:host=localhost;dbname=mytestbank;charset=utf8', 'root', '');
         }
         return self::$connection;
     }
