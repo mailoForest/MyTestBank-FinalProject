@@ -65,7 +65,7 @@ class Address implements IAddress
         if (!is_null($blockNumber)){
             if (!is_numeric($blockNumber) || $blockNumber <= 0){
                 throw new Exception('Block must be a number!');
-            } else if (is_null($entrance) || !is_numeric($entrance) || $entrance <= 0){
+            } else if (is_null($entrance) || (is_numeric($entrance) && $entrance <= 0)){
                 throw new Exception("Invalid block entrance!");
             } else if (is_null($apartmentNumber) || !is_numeric($apartmentNumber) || $apartmentNumber <= 0){
                 throw new Exception("Entrance must have apartment number!");
